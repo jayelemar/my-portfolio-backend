@@ -15,9 +15,9 @@ const transporter = nodemailer.createTransport({
   }
 })
 
-const sendMail = async (req:Request) => {
+const sendMail = async (contactData: any) => {
   try {
-    const { name, email, message } = await req.body
+    const { name, email, message } = contactData;
     
     const mailOption = {
       from: process.env.NEXT_PUBLIC_EMAIL_USER,
